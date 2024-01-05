@@ -17,7 +17,7 @@
         "RF1-AG067011 (to DVS) ",
         "R03-DA046733 (to DVS) "
     ],
-    "HowToAcknowledge": "TODO: describe how to acknowledge -- either cite a corresponding paper, or just in acknowledgement section",
+    "HowToAcknowledge": "If using this dataset, please consider citing our data paper (preprint: TODO) and our original work relating to the Social Doors Task (Wyngaarden, J.B., et al., https://doi.org/10.1101/2023.01.17.524305), the Shared Reward Task (Zaff, O., et al., https://doi.org/10.1101/2023.10.19.562908), and/or the Ultimatum/Dictator Game Task (Sazhin, D., et al., https://doi.org/10.1101/2023.10.19.563125).",
     "License": "CC0",
     "Name": "An fMRI dataset of social and nonsocial reward processing in young adults",
     "ReferencesAndLinks": [
