@@ -12,9 +12,10 @@
     "BIDSVersion": "1.8.0",
     "DatasetDOI": "doi:10.18112/openneuro.ds004920.v1.0.0",
     "Funding": [
-        "TODO",
-        "GRANT #1",
-        "GRANT #2"
+        "R15-MH122927 (to DSF) ",
+        "R21-HD093912 (to JMJ) ",
+        "RF1-AG067011 (to DVS) ",
+        "R03-DA046733 (to DVS) "
     ],
     "HowToAcknowledge": "TODO: describe how to acknowledge -- either cite a corresponding paper, or just in acknowledgement section",
     "License": "CC0",
