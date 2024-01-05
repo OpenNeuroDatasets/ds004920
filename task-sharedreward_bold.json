@@ -51,6 +51,6 @@
   "SoftwareVersions": "syngo MR E11",
   "SpacingBetweenSlices": 3,
   "StationName": "AWP166048",
-  "TaskName": "Task Name: sharedreward",
+  "TaskName": "sharedreward",
   "TotalReadoutTime": 0.0402897
 }
