@@ -10,22 +10,14 @@
   "ConversionSoftwareVersion": "v1.0.20220720",
   "DerivedVendorReportedEchoSpacing": 0.000509996,
   "DeviceSerialNumber": "166048",
-  "DwellTime": 2.8e-06,
+  "DwellTime": 2.8e-6,
   "EchoTime": 0.029,
   "EchoTrainLength": 80,
   "EffectiveEchoSpacing": 0.000509996,
   "FlipAngle": 74,
   "HeudiconvVersion": "1.0.0",
   "ImageComments": "Unaliased MB2/PE2/LB",
-  "ImageType": [
-    "ORIGINAL",
-    "PRIMARY",
-    "M",
-    "MB",
-    "ND",
-    "NORM",
-    "MOSAIC"
-],
+  "ImageType": ["ORIGINAL", "PRIMARY", "M", "MB", "ND", "NORM", "MOSAIC"],
   "InPlanePhaseEncodingDirectionDICOM": "COL",
   "InstitutionAddress": "North 13th 1701,Philadelphia,PA,US,19122",
   "InstitutionName": "Temple University - Weiss Hall",
@@ -59,5 +51,6 @@
   "SoftwareVersions": "syngo MR E11",
   "SpacingBetweenSlices": 3,
   "StationName": "AWP166048",
-  "TaskName": "TODO: full task name for mid",
-  "TotalReadoutTime": 0.0402897}
+  "TaskName": "Task Name: mid",
+  "TotalReadoutTime": 0.0402897
+}
