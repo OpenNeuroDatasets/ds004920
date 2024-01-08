@@ -30,18 +30,18 @@
     "Description": "Breathalyzer results for participants' first appointment",
     "Units": "BAC"
   },
-  "Age": {
+  "age": {
     "Description": "Age of the participant as reported by the participant",
     "Units": "years"
   },
-  "Gender": {
+  "sex": {
     "Description": "Gender of the participant as reported by the participant",
     "Levels": {
       "M": "Man",
       "F": "Woman"
     }
   },
-  "Deception": {
+  "deception": {
     "Description": "Experimenter deception rating of the participant",
     "Levels": {
       "0": "0 (not at all)",
