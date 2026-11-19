@@ -1,0 +1,59 @@
+# Summary
+This dataset is a pilot study supported by the National Institutes of Health. The study is described in the [published Data in Brief paper](https://doi.org/10.1016/j.dib.2024.110197).
+
+# Abstract
+Trait reward sensitivity, risk for developing substance use, and mood disorders have each been linked with altered striatal responses to reward. Moreover, striatal response to reward is sensitive to social context, such as the presence of a peer, and drugs are often sought out and consumed in social contexts or as a result of social experiences. Thus, mood disorder symptoms, striatal responses to social context and social reward may play a role in substance use.  To investigate this possibility, this dataset was collected as part of a NIDA grant titled "Aberrant Reward Sensitivity: Mechanisms Underlying Substance Use." The overarching goal was to characterize the associations between neural responses to social and nonsocial rewards, trait reward sensitivity, substance use, and mood disorder symptoms. The study collected questionnaire data on reward sensitivity, substance use, and other psychosocial characteristics from young adults (N=59; mean age: 20.89 years ±1.75 years). The fMRI protocol included four tasks testing different features of social and reward processing. These included: 1) a strategic reward-based decision-making task with Ultimatum and Dictator Game conditions; 2) a task where participants shared rewards or losses with peers, strangers, or non-human partners; 3) a task in which participants received well-matched social and monetary rewards and punishment; and 4) a monetary incentive delay (MID) task in which participants tried to obtain or avoid rewards and losses of different magnitude. This dataset includes sociodemographic questionnaire data, anatomical, task-based fMRI, and corresponding behavioural task-based data. We outline several opportunities for extension and reuse, including exploration of individual differences, cross-task comparisons, and representational similarity analyses. 
+
+# Expanded Task Names
+1. *doors and socialdoors*: a task in which participants received well-matched social and monetary rewards and punishment;
+1. *ugdg*: a strategic reward-based decision-making task with Ultimatum and Dictator Game conditions
+1. *mid*: a monetary incentive delay (MID) task in which participants tried to obtain or avoid rewards and losses of different magnitude
+1. *sharedreward*: a task where participants shared rewards or losses with peers, strangers, or non-human partners
+
+
+# Additional Usage Notes
+
+The `sourcedata/redcap` directory contains exported REDCap data, including records for participants without fMRI data. Task logs are stored separately in `sourcedata`. 
+
+We note that 6 out of 59 participants are missing the childhood trauma questionnaire short form, questionnaire of unpredictability in childhood, and the social experience questionnaire. These questionnaires were to be completed during a followup survey, but were not completed by these participants. 
+
+Code related to this dataset can be found on GitHub (https://github.com/DVS-Lab/ISTART-DataInBrief). This includes sourcedata for the scanner tasks and file generation scripts.
+
+The self-reported gender responses in the historical `sex` column are encoded using the existing data dictionary (`M` for Man and `F` for Woman). Questionnaire response codes in the phenotype tables use the integer spelling defined in their dictionaries (for example, `1` for `1.0`). The Buss–Perry questionnaire dictionary uses the same filename stem as its table.
+
+# Task scan and event availability
+
+The paper describes the 59-participant cohort and the four experimental paradigms. The two conditions of the Social Doors paradigm are released under separate task labels, `doors` and `socialdoors`. In snapshots 1.1.0 (cited in the paper) and 1.1.1, 50 participants have at least one BOLD run under all five task labels. The task BOLD and event files are identical in those two snapshots.
+
+| Task label | Participants with BOLD | BOLD runs | BOLD runs with zero event rows |
+| --- | ---: | ---: | ---: |
+| `doors` | 59 | 59 | 6 |
+| `socialdoors` | 58 | 58 | 6 |
+| `mid` | 56 | 80 | 5 |
+| `sharedreward` | 52 | 102 | 3 |
+| `ugdg` | 58 | 116 | 4 |
+| Total | 59 unique | 415 | 24 |
+
+The table above describes snapshots 1.1.0 and 1.1.1. Restoring the ten run 1 Doors and Social Doors tables listed below brings the number of BOLD runs with zero event rows from 24 to 14 of 415. One monetary Doors run and one Social Doors run still have zero rows.
+
+Every released BOLD run has a corresponding event TSV by filename. A table with zero event rows cannot supply task timing. Event columns differ by task. For example, the populated Doors tables use `onset`, `duration`, `trial_type`, `rt`, `resp`, and `gender`, while MID uses `onset`, `duration`, and `trial_type`. A trial can produce more than one event row.
+
+Three additional TSVs have event rows without a corresponding BOLD file in these snapshots. They are `1240` Social Doors run 1 (24 recorded outcomes), `1253` Shared Reward run 2, and `3186` MID run 1. These are outside the 415-run denominator.
+
+## Known event file exceptions
+
+| Task and run | Participants | Source status |
+| --- | --- | --- |
+| `doors` and `socialdoors`, run 1 | `1011`, `1012`, `1013`, `1015`, `1016` | In this update, these ten formerly empty run 1 tables contain the original scan-session encoding events. For each run the source matches the file used in the first-level analysis byte for byte. The older BIDS dataset pairs equivalent timing with the same scanner acquisition time, series number, and task description as OpenNeuro. The [acquisition program](https://github.com/DVS-Lab/istart/blob/065f86c020a98d2d7386a008f393cca69eb8f0b6/social_reward_c/social_reward_c.py#L120-L134) starts its event clock after the scanner trigger. Each file records 60 decision periods and 60 outcomes (30 wins and 30 losses). The [recovery manifest](https://github.com/DVS-Lab/istart-ds004920/blob/11220dd3519ce6d22bfc0102be65134a3ccc5e93/config/istart_event_sources.json) links the original `imageA` (monetary Doors) and `faceA` (Social Doors) logs by exact revision and records their Git blob hashes. |
+| `doors`, run 1 | `1282` | Zero event rows. The [archived Doors files](https://github.com/DVS-Lab/istart/tree/7a6cffe9f03e36ef91699f7d2a355ea155b6527c/social_reward_c/data/1282) contain practice timing only. No usable in-scanner Doors timing was located. |
+| `socialdoors`, run 1 | `1253` | Zero event rows. No usable Social Doors encoding log was located in the [task archive](https://github.com/DVS-Lab/istart/tree/7a6cffe9f03e36ef91699f7d2a355ea155b6527c/social_reward_c/data/1253). |
+| `socialdoors`, run 1 | `1282` | In 1.1.0 and 1.1.1, this table combines two attempts (60 and 3 outcomes), invalid timing rows, and a reset of the event clock. This update restores the [original scan-day table](https://github.com/DVS-Lab/istart/blob/e798552ad8143cc10024b3076e1385d391deedf8/social_reward_c/data/1282/sub-1282_ses-1_task-socialReward_facesB_events.tsv), which contains 60 decision periods and 60 outcomes. A later merge appended the three-trial attempt. [Original encoding log](https://github.com/DVS-Lab/istart/tree/7a6cffe9f03e36ef91699f7d2a355ea155b6527c/social_reward_c/data/1282) |
+| `socialdoors`, run 1 | `3152`, `3199` | The original logs and the release agree on 6 and 34 outcomes, respectively. These are partial records relative to the 60 outcomes in the planned run. [3152 source](https://github.com/OpenNeuroDatasets/ds004920/tree/1.1.1/sourcedata/sub-3152) · [3199 source](https://github.com/OpenNeuroDatasets/ds004920/tree/1.1.1/sourcedata/sub-3199) |
+| `mid`, run 1 | `1253`, `3101`, `3122` | Zero event rows. The original MATLAB logs have 50, 75, and 75 trial onsets, with 49, 74, and 74 outcomes, respectively. The [converter](https://github.com/DVS-Lab/ISTART-DataInBrief/blob/0cf05a6bd68c88d81fae475b1f8db649f395aa78/code/convert2bids_mid.py#L54-L87) skips logs with unequal field lengths. The missing outcome cannot be assigned to a trial from the array lengths alone. |
+| `mid`, run 1 | `1282` | Zero event rows. The older timing matches 75 trials and outcomes in the original log. Verify synchronization to the released scan before substituting it. [Older timing and raw log](https://github.com/DVS-Lab/istart-data/tree/3d08efcbe12a7328969ffdce3ec010c9f0c0d97a/bids/sub-1282/func) · [Original MATLAB log](https://github.com/DVS-Lab/istart/tree/7a6cffe9f03e36ef91699f7d2a355ea155b6527c/Monetary_Incentive/data/sub-1282) |
+| `mid`, run 2 | `1286` | Zero event rows. The [archived MID source](https://github.com/DVS-Lab/istart/tree/7a6cffe9f03e36ef91699f7d2a355ea155b6527c/Monetary_Incentive/data/sub-1286) contains a run 1 log. A run 2 log was not located. |
+| `sharedreward`, run 2 | `1002` | Zero event rows. The source CSV labeled run 1 uses zero-based numbering and has seven recorded outcomes. The [converter](https://github.com/DVS-Lab/ISTART-DataInBrief/blob/0cf05a6bd68c88d81fae475b1f8db649f395aa78/code/convertSharedReward2BIDSevents.m#L27-L57) requires at least 72 trial records after its response-field check. [Source log directory](https://github.com/OpenNeuroDatasets/ds004920/tree/1.1.1/sourcedata/sub-1002) |
+| `sharedreward`, runs 1 and 2 | `1282` | Zero event rows in both tables. Two 72-trial logs match the older timing tables, and a separate short attempt is also archived. Verify the mapping to the two scans before substituting the older tables. [Older timing](https://github.com/DVS-Lab/istart-data/tree/3d08efcbe12a7328969ffdce3ec010c9f0c0d97a/bids/sub-1282/func) · [Original CSVs](https://github.com/DVS-Lab/istart/tree/7a6cffe9f03e36ef91699f7d2a355ea155b6527c/Shared_Reward/logs/1282) |
+| `ugdg`, runs 1 and 2 | `1240`, `1282` | Zero event rows in all four tables. The two non-practice logs per participant contain 36 trials each. The column order for 1240 differs from the fixed positions in the [converter](https://github.com/DVS-Lab/ISTART-DataInBrief/blob/0cf05a6bd68c88d81fae475b1f8db649f395aa78/code/convert2bids_ugdg.m#L98-L139), which also notes an imaging issue for 1240. The cause of the empty tables for 1282 is undetermined. Verify timing and scan suitability before reuse. [Original CSVs](https://github.com/OpenNeuroDatasets/ds004920/tree/1.1.1/sourcedata/UGDG/logs) |
+
+Match BOLD and events by participant, task, and run, and check trial counts by condition and timing before analysis. See the [companion run availability notes](https://github.com/DVS-Lab/ISTART-DataInBrief/blob/main/docs/ds004920-run-availability.md) for the versioned audit.

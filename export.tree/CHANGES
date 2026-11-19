@@ -1,0 +1,16 @@
+1.1.2 2026-11-19
+  - Restore the original Doors and Social Doors run 1 event tables for sub-1011, sub-1012, sub-1013, sub-1015, and sub-1016. This reduces BOLD runs with empty event tables from 24 to 14 of 415.
+  - Restore sub-1282 Social Doors run 1 from the scan-day file with 60 outcomes, removing rows introduced by a later merge conflict.
+  - Align questionnaire response codes and the participants.tsv sex column with the existing data dictionaries. Correct the Buss–Perry questionnaire sidecar filename.
+  - Document task-specific scan and event availability, update How to Acknowledge, and list six published references with DOIs.
+1.1.1 2024-01-08
+  - Edited typo in summary and fixed formatting of participants.tsv/.json file
+1.1.0 2024-01-05
+  - update dataset title and fill in readme information and other meta data
+1.0.0 2024-01-05
+  - Version 1.0.0 - Initial Upload
+0.0.1  Initial data acquired
+TODOs:
+	- verify and possibly extend information in participants.tsv (see for example http://datasets.datalad.org/?dir=/openfmri/ds000208)
+	- fill out dataset_description.json, README, sourcedata/README (if present)
+	- provide _events.tsv file for each _bold.nii.gz with onsets of events (see  '8.5 Task events'  of BIDS specification)
