@@ -1,0 +1,17 @@
+{
+  "Endowment": {
+    "Description": "Amount of money available to divide on the trial.",
+    "Units": "USD"
+  },
+  "Endowment_pmod": {
+    "Description": "Cue regressor weight, calculated by subtracting the mean endowment for that run and game/role code from the trial endowment and rounding the difference.",
+    "Units": "USD"
+  },
+  "Decision": {
+    "Description": "Endowment minus the amount associated with the selected option on decision rows. The conversion code assigns zero for a rejected offer.",
+    "Units": "USD"
+  },
+  "Decision_pmod": {
+    "Description": "Decision regressor weight derived from the monetary option as a fraction of the endowment, centered using the run's reference mean for that decision regressor. On recipient option-presented and choice rows the converter uses the offered fraction even when the offer is rejected."
+  }
+}
