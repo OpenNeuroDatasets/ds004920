@@ -17,7 +17,6 @@
   "FlipAngle": 74,
   "HeudiconvVersion": "1.0.0",
   "ImageComments": "Unaliased MB2/PE2/LB",
-  "ImageType": ["ORIGINAL", "PRIMARY", "M", "MB", "ND", "NORM", "MOSAIC"],
   "InPlanePhaseEncodingDirectionDICOM": "COL",
   "InstitutionAddress": "North 13th 1701,Philadelphia,PA,US,19122",
   "InstitutionName": "Temple University - Weiss Hall",
@@ -51,6 +50,8 @@
   "SoftwareVersions": "syngo MR E11",
   "SpacingBetweenSlices": 3,
   "StationName": "AWP166048",
+  "TaskDescription": "Participants guessed whether a card was higher or lower than five. Gains and losses were shared with a friend, a stranger, or a computer partner.",
+  "Instructions": "Press Button 2 (index finger) to guess low. Press Button 3 (middle finger) to guess higher than 5.",
   "TaskName": "sharedreward",
   "TotalReadoutTime": 0.0402897
 }

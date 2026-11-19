@@ -17,7 +17,6 @@
   "FlipAngle": 74,
   "HeudiconvVersion": "1.0.0",
   "ImageComments": "Unaliased MB2/PE2/LB",
-  "ImageType": ["ORIGINAL", "PRIMARY", "M", "MB", "ND", "NORM", "MOSAIC"],
   "InPlanePhaseEncodingDirectionDICOM": "COL",
   "InstitutionAddress": "North 13th 1701,Philadelphia,PA,US,19122",
   "InstitutionName": "Temple University - Weiss Hall",
@@ -51,6 +50,8 @@
   "SoftwareVersions": "syngo MR E11",
   "SpacingBetweenSlices": 3,
   "StationName": "AWP166048",
+  "TaskDescription": "A cue indicated a potential gain, loss, or neutral outcome. Participants responded when a white target square appeared.",
+  "Instructions": "In this task you will be able to win money if you are quick enough. Your task is to press a button when you see this white square.",
   "TaskName": "mid",
   "TotalReadoutTime": 0.0402897
 }

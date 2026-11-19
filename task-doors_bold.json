@@ -17,7 +17,6 @@
   "FlipAngle": 74,
   "HeudiconvVersion": "1.0.0",
   "ImageComments": "Unaliased MB2/PE2/LB",
-  "ImageType": ["ORIGINAL", "PRIMARY", "M", "MB", "ND", "NORM", "MOSAIC"],
   "InPlanePhaseEncodingDirectionDICOM": "COL",
   "InstitutionAddress": "North 13th 1701,Philadelphia,PA,US,19122",
   "InstitutionName": "Temple University - Weiss Hall",
@@ -53,6 +52,8 @@
   "SoftwareVersions": "syngo MR E11",
   "SpacingBetweenSlices": 3,
   "StationName": "AWP166048",
+  "TaskDescription": "Participants chose between two doors and received feedback indicating a monetary gain or loss.",
+  "Instructions": "We want you to tell us which door you think contains a prize.",
   "TaskName": "doors",
   "TotalReadoutTime": 0.0402897
 }

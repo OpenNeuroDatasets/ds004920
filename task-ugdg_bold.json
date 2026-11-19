@@ -17,7 +17,6 @@
   "FlipAngle": 74,
   "HeudiconvVersion": "1.0.0",
   "ImageComments": "Unaliased MB2/PE2/LB",
-  "ImageType": ["ORIGINAL", "PRIMARY", "M", "MB", "ND", "NORM", "MOSAIC"],
   "InPlanePhaseEncodingDirectionDICOM": "COL",
   "InstitutionAddress": "North 13th 1701,Philadelphia,PA,US,19122",
   "InstitutionName": "Temple University - Weiss Hall",
@@ -49,6 +48,8 @@
   "SequenceVariant": "SK\\SS",
   "SoftwareVersions": "syngo MR E11",
   "StationName": "AWP166048",
+  "TaskDescription": "Participants chose a monetary allocation as proposer in the Dictator and Ultimatum Games, and accepted or rejected offers as recipient in the Ultimatum Game.",
+  "Instructions": "In this task you will be making decisions involving sending money to another person. Remember, you will play 3 different types of trials in this task.",
   "TaskName": "ugdg",
   "TotalReadoutTime": 0.0402897
 }
